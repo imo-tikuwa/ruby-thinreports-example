@@ -3,6 +3,11 @@ require 'sinatra/reloader'
 require 'thinreports'
 require 'date'
 
+# index.htmlを表示
+get '/' do
+  send_file File.join(settings.public_folder, 'index.html')
+end
+
 # PDFをダウンロードするルーティング
 get '/download_pdf' do
 
